@@ -22,19 +22,25 @@ Pastikan sudah menginstall:
    ```bash
    git clone https://github.com/username/suaraku_django.git
    cd suaraku_django
-2. Buat Virtual Environment
+   
+3. Buat Virtual Environment
+   ```bash
    python -m venv venv
 
    Aktifkan venv: venv\Scripts\activate
 
-3. Install dependencies
+5. Install dependencies
+   ```bash
    pip install -r requirements.txt
 
-4. Jalankan migrasi database
+7. Jalankan migrasi database
+   ```bash
    python manage.py migrate
 
-5. Buat superuser (untuk admin panel)
+8. Buat superuser (untuk admin panel)
+    ```bash
    python manage.py createsuperuser
 
-6. Jalankan server
+9. Jalankan server
+    ```bash
    python manage.py rusnerver
