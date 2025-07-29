@@ -1,13 +1,18 @@
+import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Load file .env
+load_dotenv(BASE_DIR / ".env")
 
 # ========================
 # SECURITY
 # ========================
-SECRET_KEY = 'django-insecure-pqrkq9b11yx3b8ofy02$0!(t4#4%z#^g5gff8v+5umjfvd-_$*'
-DEBUG = True  # ✅ Matikan di production
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']  # Tambah domain produksi nanti
+SECRET_KEY = os.getenv("SECRET_KEY", "unsafe-secret-key")  
+DEBUG = os.getenv("DEBUG", "False").lower() in ("true", "1", "yes")
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
 
 # ========================
 # APPLICATIONS
