@@ -2,22 +2,22 @@
 {% block content %}
 <section class="py-8 sm:py-12 px-4 sm:px-6 md:px-0 max-w-3xl mx-auto">
   <!-- Judul -->
-  <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{{ cerita.judul }}</h1>
-  <p class="text-sm text-gray-500 mb-6">Diterbitkan: {{ cerita.tanggal_dibuat|date:"d M Y" }}</p>
+  <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{{ artikel.judul }}</h1>
+  <p class="text-sm text-gray-500 mb-6">Diterbitkan: {{ artikel.tanggal|date:"d M Y" }}</p>
 
-  <!-- Isi Artikel ala Wikipedia -->
+  <!-- Isi Artikel -->
   <article class="prose prose-gray max-w-none text-justify">
-    {{ cerita.konten|safe }}
+    {{ artikel.konten|safe }}
   </article>
 
   <!-- Tombol Kembali -->
   <div class="mt-8 border-t border-gray-200 pt-4">
-    <a href="{% url 'titipan_cerita:list_cerita' %}" 
-       class="text-blue-700 hover:underline text-sm">← Kembali ke daftar cerita</a>
+    <a href="{% url 'remaja_sehat:list_artikel' %}" 
+       class="text-blue-700 hover:underline text-sm">← Kembali ke daftar artikel</a>
   </div>
 </section>
 
-<!-- Styling tambahan ala Wikipedia -->
+<!-- Styling tambahan -->
 <style>
   /* Paragraf */
   .prose p {
@@ -48,14 +48,14 @@
     display: block;
     margin: 1rem auto;
     border-radius: 0.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* bayangan ringan */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* efek bayangan ringan */
   }
 
-  /* Blockquote */
+  /* Blockquote ala Wikipedia */
   .prose blockquote {
-    border-left: 4px solid #3b82f6; /* biru */
+    border-left: 4px solid #3b82f6; /* biru Tailwind */
     padding-left: 1rem;
-    color: #4b5563;
+    color: #4b5563; /* abu-abu medium */
     font-style: italic;
     background: #f9fafb;
     border-radius: 0.25rem;

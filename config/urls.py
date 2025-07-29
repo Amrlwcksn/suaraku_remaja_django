@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('home.urls', namespace='home')),
     path('ruang-bercerita/', include('ruang_bercerita.urls', namespace='ruang_bercerita')),
     path('titipan-cerita/', include('titipan_cerita.urls')),
+    path('remaja-sehat/', include('remaja_sehat.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 
 ]

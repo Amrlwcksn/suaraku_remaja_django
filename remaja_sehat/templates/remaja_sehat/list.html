@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="py-8 sm:py-12 px-4 sm:px-6 md:px-0 max-w-3xl mx-auto">
+  <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">🩺 Remaja Sehat</h1>
+  <div class="divide-y divide-gray-200">
+    {% for a in artikel %}
+    <article class="py-5 hover:bg-gray-50 transition rounded-lg px-2">
+      <a href="{% url 'remaja_sehat:detail_artikel' a.slug %}" class="block">
+        <h2 class="text-lg sm:text-xl font-semibold text-blue-700 hover:underline">
+          {{ a.judul }}
+        </h2>
+        <p class="text-gray-500 text-xs mt-1">{{ a.tanggal|date:"d M Y" }}</p>
+        <p class="text-gray-700 text-sm mt-2 leading-relaxed line-clamp-3">
+          {{ a.konten|striptags|truncatechars:200 }}
+        </p>
+      </a>
+    </article>
+    {% empty %}
+      <p class="text-gray-500 py-8 text-center">Belum ada artikel kesehatan.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
