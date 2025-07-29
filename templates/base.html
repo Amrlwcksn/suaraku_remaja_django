@@ -38,9 +38,9 @@
       <div>
         <h4 class="font-semibold text-gray-800 mb-2">Navigasi</h4>
         <ul class="space-y-1">
-          <li><a href="#" class="hover:text-indigo-700 transition">Titipan Cerita</a></li>
-          <li><a href="#" class="hover:text-indigo-700 transition">Remaja Sehat</a></li>
-          <li><a href="#" class="hover:text-indigo-700 transition">Ruang Bercerita</a></li>
+          <li><a href="{% url 'titipan_cerita:list_cerita' %}" class="hover:text-indigo-700 transition">Titipan Cerita</a></li>
+          <li><a href="{% url 'remaja_sehat:list_artikel' %}" class="hover:text-indigo-700 transition">Remaja Sehat</a></li>
+          <li><a href="{% url 'ruang_bercerita:kirim' %}" class="hover:text-indigo-700 transition">Ruang Bercerita</a></li>
         </ul>
       </div>
 
